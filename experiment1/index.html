@@ -1,124 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- This title appears in tabs and bookmarks -->
-  <title>Minecraft Recipe Generator</title>
-  
-  <!-- Use UTF-8 character set -->
   <meta charset="UTF-8" />
-  <!-- Ensure proper scaling on various devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shitty Minecraft Recipe Generator</title>
 
-  <!-- Link to site-wide CSS and page-specific styles -->
-  <link rel="stylesheet" type="text/css" href="../css/site.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- pixel‑y font first -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <!-- Load jQuery library -->
+  <!-- site / page css -->
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- libs / scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script>
-  
-  <!-- Link to JavaScript files -->
-  <script type="text/javascript" src="../js/site.js" defer></script>
-  <script type="text/javascript" src="./js/project.js" defer></script>
-  <!-- Note: p5.js and sketch.js have been removed as they're not needed -->
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="../js/site.js" defer></script>
+  <script src="./js/project.js" defer></script>
 
-  <!-- Inline CSS for Minecraft-inspired style -->
+  <!-- quick page tweaks -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-    body {
-      background-color: #37472A; /* Deep, earthy green */
-      font-family: 'Press Start 2P', cursive;
-      color: #fff;
-      padding: 2em;
-      text-align: center;
-      margin: 0;
+    body{
+      background:#37472A;
+      font-family:'Press Start 2P',cursive;
+      color:#fff;
+      margin:0;
+      padding:2em;
+      text-align:center;
     }
 
-    h1, h2 {
-      margin-bottom: 0.5em;
+    h1,h2{margin-bottom:.5em;}
+
+    #clicker{
+      background:#4CAF50;
+      color:#fff;
+      padding:15px 30px;
+      border:4px solid #2e7d32;
+      font-size:1em;
+      cursor:pointer;
+      box-shadow:0 0 8px #000;
+      text-transform:uppercase;
+      margin-bottom:2em;
+      transition:background .2s;
+      font-family:inherit;
+    }
+    #clicker:hover{background:#388e3c;}
+
+    #box{
+      background:rgba(40,40,40,.9);
+      border:4px solid #8d6e63;
+      padding:2em;
+      margin:auto;
+      max-width:800px;
+      box-shadow:0 0 10px #000;
+      line-height:2em;
+      font-size:.75em;
+      white-space:pre-wrap;
+      font-family:inherit;
     }
 
-    /* Generator button styling */
-    #clicker {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 30px;
-      border: 4px solid #2e7d32;
-      font-size: 1em;
-      cursor: pointer;
-      box-shadow: 0 0 8px #000;
-      text-transform: uppercase;
-      margin-bottom: 2em;
-      transition: background-color 0.2s;
-    }
+    .minor-section{margin:2em auto;max-width:800px;}
 
-    #clicker:hover {
-      background-color: #388e3c;
+    /* new bits */
+    .translation{
+      font-size:.6em;
+      text-align:left;
+      margin:1em 0 0;
     }
+    .translation a{color:#9ad8ff;text-decoration:none;}
+    .translation a:hover{text-decoration:underline;}
 
-    /* Text output box styling */
-    #box {
-      background-color: rgba(40, 40, 40, 0.9);
-      border: 4px solid #8d6e63;
-      padding: 2em;
-      margin: auto;
-      max-width: 800px;
-      box-shadow: 0 0 10px #000;
-      line-height: 2em;
-      font-size: 0.75em;
-      white-space: pre-wrap;
+    .home-link{
+      font-size:.6em;
+      text-align:left;
+      list-style:disc inside;
+      margin-top:2em;
     }
-
-    /* Minor section styles */
-    .minor-section {
-      margin: 2em auto;
-      max-width: 800px;
-    }
-
-    nav#links ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    nav#links li {
-      display: inline;
-      margin-right: 1em;
-    }
-
-    nav#links a {
-      color: #4CAF50;
-      text-decoration: none;
-      font-size: 1em;
-    }
-
-    nav#links a:hover {
-      text-decoration: underline;
-    }
+    .home-link a{color:#9ad8ff;text-decoration:none;}
+    .home-link a:hover{text-decoration:underline;}
   </style>
 </head>
+
 <body>
   <main id="content">
     <section>
-      <h1>Minecraft Recipe Generator</h1>
+      <h1>Shitty Minecraft Recipe Generator</h1>
 
-      <!-- Generator section replaces previous canvas container -->
       <div class="minor-section">
         <button id="clicker">reroll it</button>
         <div id="box"></div>
+
+        <!-- 👇 new “translated from” line -->
+        <p class="translation">
+          Translated from
+          <a href="https://shitty-minecraft-recipe-generator.glitch.me" target="_blank">
+            cmpm147‑ex01‑bad‑quests on glitch.com
+          </a>
+        </p>
       </div>
 
       <div class="minor-section">
         <h2>Description</h2>
-        <p>This generator produces a quirky, low-quality Minecraft crafting recipe using randomized text elements.</p>
+        <p>This generator produces a shitty, useless Minecraft crafting recipe using randomized text elements.</p>
       </div>
 
       <div class="minor-section">
         <h2>Technical</h2>
-        <p>The project uses a simple grammar-based text generation technique with JavaScript to create a variety of humorous crafting recipes.</p>
+        <p>The project uses a simple grammar‑based text generation technique with JavaScript to create a variety of humorous crafting recipes.</p>
       </div>
 
       <div class="minor-section">
         <h2>Reflection</h2>
         <p>Team members reflect on the creative process, challenges faced, and the fun of building the generator.</p>
+      </div>
+
+      <!-- 👇 lil bullet Home link (optional) -->
+      <ul class="home-link">
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

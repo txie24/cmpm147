@@ -1,7 +1,10 @@
-/* style.css */
-
-/* Set the canvas element to be the full size of the container */
-canvas {
+/* give everything the chunky pixel font */
+body,h1,h2,h3,h4,h5,h6,p,button,#box{
+    font-family:'Press Start 2P',cursive!important;
+  }
+  
+  /* full‑size canvas (if you ever drop one in) */
+  canvas {
     width: 100%;
     height: 100%;
 }
