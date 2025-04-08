@@ -1,70 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+<html lang="en">
+  <head>
+    <title>Minecraft Recipe Generator</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/script.js" defer></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      body {
+        background: url('https://static.planetminecraft.com/files/image/minecraft/texture-pack/2021/709/14376136-pack_l.webp') repeat; /* grass block tile */
+        font-family: 'Press Start 2P', cursive;
+        color: #fff;
+        padding: 2em;
+        text-align: center;
+      }
 
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+      #clicker {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 30px;
+        border: 4px solid #2e7d32;
+        font-size: 1em;
+        cursor: pointer;
+        box-shadow: 0 0 8px #000;
+        text-transform: uppercase;
+        margin-bottom: 2em;
+      }
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+      #clicker:hover {
+        background-color: #388e3c;
+      }
 
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
-</head>
-<body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
-
-			<h1>Experiment X - Subject/Topic</h1>
-
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
-			</div>
-
-			<div class="minor-section">
-				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
-			</div>
-
-			<div class="minor-section">
-				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
-			</div>
-
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
-			</div>
-
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-		</nav>
-	</main>
-</body>
+      #box {
+        background-color: rgba(40, 40, 40, 0.9);
+        border: 4px solid #8d6e63;
+        padding: 2em;
+        margin: auto;
+        max-width: 800px;
+        box-shadow: 0 0 10px #000;
+        line-height: 2em;
+        font-size: 0.75em;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="clicker">reroll it</button>
+    <div id="box"></div>
+  </body>
 </html>
