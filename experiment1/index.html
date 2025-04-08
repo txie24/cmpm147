@@ -1,52 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Minecraft Recipe Generator</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="/script.js" defer></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+<head>
+  <!-- This title appears in tabs and bookmarks -->
+  <title>Minecraft Recipe Generator</title>
+  
+  <!-- Use UTF-8 character set -->
+  <meta charset="UTF-8" />
+  <!-- Ensure proper scaling on various devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      body {
-        background: url('https://static.planetminecraft.com/files/image/minecraft/texture-pack/2021/709/14376136-pack_l.webp') repeat; /* grass block tile */
-        font-family: 'Press Start 2P', cursive;
-        color: #fff;
-        padding: 2em;
-        text-align: center;
-      }
+  <!-- Link to site-wide CSS and page-specific styles -->
+  <link rel="stylesheet" type="text/css" href="../css/site.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-      #clicker {
-        background-color: #4CAF50;
-        color: white;
-        padding: 15px 30px;
-        border: 4px solid #2e7d32;
-        font-size: 1em;
-        cursor: pointer;
-        box-shadow: 0 0 8px #000;
-        text-transform: uppercase;
-        margin-bottom: 2em;
-      }
+  <!-- Load jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  
+  <!-- Link to JavaScript files -->
+  <script type="text/javascript" src="../js/site.js" defer></script>
+  <script type="text/javascript" src="./js/project.js" defer></script>
+  <!-- Note: p5.js and sketch.js have been removed as they're not needed -->
 
-      #clicker:hover {
-        background-color: #388e3c;
-      }
+  <!-- Inline CSS for Minecraft-inspired style -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-      #box {
-        background-color: rgba(40, 40, 40, 0.9);
-        border: 4px solid #8d6e63;
-        padding: 2em;
-        margin: auto;
-        max-width: 800px;
-        box-shadow: 0 0 10px #000;
-        line-height: 2em;
-        font-size: 0.75em;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="clicker">reroll it</button>
-    <div id="box"></div>
-  </body>
-</html>
+    body {
+      background-color: #37472A; /* Deep, earthy green */
+      font-family: 'Press Start 2P', cursive;
+      color: #fff;
+      padding: 2em;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1, h2 {
+      margin-bottom: 0.5em;
+    }
+
+    /* Generator button styling */
+    #clicker {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 30px;
+      border: 4px solid #2e7d32;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 8px #000;
+      text-transform: uppercase;
+      margin-bottom: 2em;
+      transition: background-color 0.2s;
+    }
+
+    #clicker:hover {
+      background-color: #388e3c;
+    }
+
+    /* Text output box styling */
+    #box {
+      background-color: rgba(40, 40, 40, 0.9);
+      border: 4px solid #8d6e63;
+      padding: 2em;
+      margin: auto;
+      max-width: 800px;
+      box-shadow: 0 0 10px #000;
+      line-height: 2em;
+      font-size: 0.75em;
+      white-space: pre-wrap;
+    }
+
+    /* Minor section styles */
+    .minor-section {
+      margin: 2em auto;
+      max-width: 800px;
+    }
+
+    nav#links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav#links li {
+      display: inline;
+      margin-right: 1em;
+    }
+
+    nav#links a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    nav#links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main id="content">
+    <section>
+      <h1>Minecraft Recipe Generator</h1>
+
+      <!-- Generator section replaces previous canvas container -->
+      <div class="minor-section">
+        <button id="clicker">reroll it</button>
+        <div id="box"></div>
+      </div>
+
+      <div class="minor-section">
+        <h2>Description</h2>
+        <p>This generator produces a quirky, low-quality Minecraft crafting recipe using randomized text elements.</p>
+      </div>
+
+      <div class="minor-section">
+        <h2>Technical</h2>
+        <p>The project uses a simple grammar-based text generation technique with JavaScript to create a variety of humorous crafting recipes.</p>
+      </div>
+
+      <div class="minor-section">
+        <h2>Reflection</h2>
+        <p>Team members reflect on the creative process, challenges faced, and the fun of building the generator.</p>
