@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shitty Minecraft Recipe Generator</title>
 
-  <!-- pixel‑y font first -->
+  <!-- pixel‑y font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <!-- site / page css -->
+  <!-- css files -->
   <link rel="stylesheet" href="../css/site.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -21,7 +21,7 @@
   <script src="../js/site.js" defer></script>
   <script src="./js/project.js" defer></script>
 
-  <!-- quick page tweaks -->
+  <!-- page tweaks -->
   <style>
     body{
       background:#37472A;
@@ -64,7 +64,7 @@
 
     .minor-section{margin:2em auto;max-width:800px;}
 
-    /* new bits */
+    /* translated‑from line */
     .translation{
       font-size:.6em;
       text-align:left;
@@ -73,14 +73,23 @@
     .translation a{color:#9ad8ff;text-decoration:none;}
     .translation a:hover{text-decoration:underline;}
 
-    .home-link{
-      font-size:.6em;
-      text-align:left;
-      list-style:disc inside;
-      margin-top:2em;
+    /* --- new home button box --- */
+    .home-box{
+      background:rgba(40,40,40,.9);
+      border:4px solid #8d6e63;
+      padding:1.5em;
+      margin:2.5em auto 0;
+      max-width:260px;
+      box-shadow:0 0 10px #000;
     }
-    .home-link a{color:#9ad8ff;text-decoration:none;}
-    .home-link a:hover{text-decoration:underline;}
+    .home-btn{
+      display:block;
+      font-size:1em;          /* bigger text */
+      color:#4CAF50;
+      text-decoration:none;
+      text-transform:uppercase;
+    }
+    .home-btn:hover{text-decoration:underline;}
   </style>
 </head>
 
@@ -93,7 +102,6 @@
         <button id="clicker">reroll it</button>
         <div id="box"></div>
 
-        <!-- 👇 new “translated from” line -->
         <p class="translation">
           Translated from
           <a href="https://shitty-minecraft-recipe-generator.glitch.me" target="_blank">
@@ -114,13 +122,13 @@
 
       <div class="minor-section">
         <h2>Reflection</h2>
-        <p>Team members reflect on the creative process, challenges faced, and the fun of building the generator.</p>
+        <p>There are some problems I encountered while combining the HTML code; one of them is my Minecraft font wouldn’t show, but I found out I also needed to tweak the CSS.</p>
       </div>
 
-      <!-- 👇 lil bullet Home link (optional) -->
-      <ul class="home-link">
-        <li><a href="../index.html">Home</a></li>
-      </ul>
+      <!-- bigger home button in its own box -->
+      <div class="home-box">
+        <a href="../index.html" class="home-btn">home</a>
+      </div>
     </section>
   </main>
 </body>
