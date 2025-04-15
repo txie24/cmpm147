@@ -1,16 +1,6 @@
 // sketch.js
 // Author: Your Name
-//
-// Inverted dunes shaped like "∪", placed lower so they don't
-// cover the mountain in the background.
-// Two mountain layers are created: a background mountain and a
-// foreground mountain generated with a different noise pattern.
-// Each dune is drawn with a gradient and then has a wiggly shadow line
-// drawn from its highest peak, with a shadow gradient along the left side.
-//
-// --------------------------------------------------
-// COLORS & CONSTANTS
-// --------------------------------------------------
+
 
 // SKY
 const SKY_COLOR          = "#5FA8CB";
@@ -23,27 +13,21 @@ const CLOUD_MIN_SPEED    = 0.25;
 const CLOUD_MAX_SPEED    = 0.7;
 
 // Background Mountains
-const MOUNTAIN_COLOR     = "#7C8C94";
+const MOUNTAIN_COLOR     = "#4B5763";
 const MOUNTAIN_NOISE_FREQ= 0.007;
 const MOUNTAIN_MIN_Y     = 0.30;
 const MOUNTAIN_MAX_Y     = 0.60;
 const MOUNTAIN_EXTRA_MARGIN = 0.1;
 
 // Foreground Mountains (different pattern)
-const FOREGROUND_MOUNTAIN_COLOR = "#4B5763";
+const FOREGROUND_MOUNTAIN_COLOR = "#7C8C94";
 const FOREGROUND_MOUNTAIN_NOISE_FREQ = 0.008;
 const FOREGROUND_MOUNTAIN_MIN_Y  = 0.32;
 const FOREGROUND_MOUNTAIN_MAX_Y  = 0.62;
 const FOREGROUND_MOUNTAIN_EXTRA_MARGIN = 0.1;
 
 // Dunes
-/*
-  Dunes:
-    - baselineFactor: vertical position (0..1) relative to canvas height
-    - topColor, bottomColor: gradient fill colors
-    - strokeColor: outline color
-    - ridgeFactor: horizontal position (0..1) of the deepest dip
-*/
+
 const DUNE_DATA = [
   {
     // Rearmost dune (background)
