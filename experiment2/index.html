@@ -71,21 +71,27 @@
     <div class="minor-section">
       <div>
         <h2>Description</h2>
-        <p>We're trying to replicate the landscape on the left procedurally. Or at least suggest relevant parts of it.</p>
-        <p>We begin our creative journey with a simple concept: a horizontal line set across the canvas.</p>
-        <p>In this experiment, I embarked on a journey to transform a simple digital canvas into a dynamic and textured landscape using p5.js, a JavaScript library for creative coding. The project began with the rendering of a basic horizontal line across the canvas, serving as a foundational element for further visual experimentation...</p>
+        <p>This generative artwork reimagines a desert landscape inspired by the Mojave dunes. The visual is procedurally generated using layered Perlin noise to create realistic terrain shapes, parallax scrolling, and environmental depth.</p>
+        <p>The scene consists of multiple visual layers: a parallax-shifting sky with dynamic clouds, two layers of mountains with sharp peaks created using modified noise, and three layered dunes in the foreground. Each dune has a unique shape and color gradient, giving depth and texture. From the peak of each dune, a wiggly vertical line is drawn down, casting a shadow gradient along its left side to simulate lighting and elevation.</p>
       </div>
     </div>
 
     <div class="minor-section">
-      <h2>Technical</h2>
-      <p>Further elaborating on this textured horizon, I introduced a cutoff threshold. This algorithmic intervention transformed portions of the textured line...</p>
-      <!-- etc. -->
+		<h2>Technical</h2>
+		<p>This project was built using p5.js and leverages Perlin noise to procedurally generate natural-looking terrain features. The composition includes:</p>
+		<ul>
+		  <li><strong>Sky and Clouds:</strong> A static sky background with wispy cirrus clouds that loop and shift with parallax.</li>
+		  <li><strong>Mountains:</strong> Two distinct mountain layers use noise-based elevation and a sharpening function to create jagged peaks. The foreground mountain has a different noise frequency and offset to make it visually distinct.</li>
+		  <li><strong>Dunes:</strong> Three ∪-shaped inverted dune layers are created using a custom slope and noise algorithm. Each dune has its own color gradient and randomized ridge offset to avoid repetition.</li>
+		  <li><strong>Wiggly Shadows:</strong> From the highest point of each dune, a smooth, noise-driven wiggly line is drawn downward. A clipped gradient shadow is rendered to the left of this line, simulating soft shading caused by dune curvature.</li>
+		  <li><strong>Parallax:</strong> Different layers shift at various speeds in response to mouse movement to give a sense of depth and perspective.</li>
+		</ul>
+		<p>The landscape responds interactively to user input through a "Reimagine" button that regenerates the scene using a new seed, introducing variation in every refresh.</p>
     </div>
 
     <div class="minor-section">
       <h2>Reflection</h2>
-      <p>Working on this example experiment for students started as a brief quickie example and turned into a 6-hour code binge...</p>
+      <p>Trying to make the generation as close to the refrence image was very difficult there are a lot of detials that couldn't be added, but I tried my best to make it look as similar as possible</p>
     </div>
   </section>
 
