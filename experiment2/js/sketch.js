@@ -13,14 +13,14 @@ const CLOUD_MIN_SPEED    = 0.25;
 const CLOUD_MAX_SPEED    = 0.7;
 
 // Background Mountains
-const MOUNTAIN_COLOR     = "#4B5763";
+const MOUNTAIN_COLOR     = "#2C2E3A";
 const MOUNTAIN_NOISE_FREQ= 0.007;
 const MOUNTAIN_MIN_Y     = 0.30;
 const MOUNTAIN_MAX_Y     = 0.60;
 const MOUNTAIN_EXTRA_MARGIN = 0.1;
 
 // Foreground Mountains (different pattern)
-const FOREGROUND_MOUNTAIN_COLOR = "#7C8C94";
+const FOREGROUND_MOUNTAIN_COLOR = "#4B5763";
 const FOREGROUND_MOUNTAIN_NOISE_FREQ = 0.008;
 const FOREGROUND_MOUNTAIN_MIN_Y  = 0.32;
 const FOREGROUND_MOUNTAIN_MAX_Y  = 0.62;
