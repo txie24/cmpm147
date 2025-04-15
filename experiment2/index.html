@@ -1,98 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment 2 - Generative Landscape</title>
+  <!-- This title is used for tabs and bookmarks -->
+  <title>Experiment 2 - Generative Landscape</title>
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Use UTF character set, a good idea with any webpage -->
+  <meta charset="UTF-8" />
+  <!-- Set viewport so page remains consistently scaled w narrow devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+  <link rel="stylesheet" type="text/css" href="../css/site.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <!-- Load jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <!-- Load p5.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+  <!-- Link to javascript files - DEFER waits until all elements are rendered -->
+  <script type="text/javascript" src="../js/site.js" defer></script>
+  <!-- Use me for a JavaScript OOP Project -->
+  <script type="text/javascript" src="./js/project.js" defer></script>
+  <!-- Use me for a p5.js project -->
+  <script type="text/javascript" src="./js/sketch.js" defer></script>
 
-    <meta property="og:url" content="https://wmodes.github.io/cmpm147/experiment2b" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Experiment 2B - Generative Landscape" />
-    <meta property="og:description" content="Explore the creation of a dynamic, generative landscape using p5.js, from a simple line to a complex scene mimicking Monument Valley. This interactive experiment showcases the power of Perlin noise in crafting realistic terrains and atmospheric effects." />
-    <meta property="og:image" content="https://wmodes.github.io/cmpm147/experiment2b/img/completed.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@wmodes" />
-    <meta name="twitter:title" content="Experiment 2B - Generative Landscape" />
-    <meta name="twitter:description" content="Join me on a coding journey to simulate a natural landscape with p5.js. From a single line to a fully animated skyline, discover how Perlin noise can transform digital art into a lifelike environment." />
-    <meta name="twitter:image" content="https://wmodes.github.io/cmpm147/experiment2b/img/completed.png" />
-
+  <meta property="og:url" content="https://wmodes.github.io/cmpm147/experiment2b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Experiment 2B - Generative Landscape" />
+  <meta property="og:description"
+        content="Explore the creation of a dynamic, generative landscape using p5.js, from a simple line to a complex scene mimicking Monument Valley. This interactive experiment showcases the power of Perlin noise in crafting realistic terrains and atmospheric effects." />
+  <meta property="og:image"
+        content="https://wmodes.github.io/cmpm147/experiment2b/img/completed.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@wmodes" />
+  <meta name="twitter:title" content="Experiment 2B - Generative Landscape" />
+  <meta name="twitter:description"
+        content="Join me on a coding journey to simulate a natural landscape with p5.js. From a single line to a fully animated skyline, discover how Perlin noise can transform digital art into a lifelike environment." />
+  <meta name="twitter:image"
+        content="https://wmodes.github.io/cmpm147/experiment2b/img/completed.png" />
 </head>
+
 <body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
+<main id="content">
+  <section>
 
-			<h1>Experiment 2 - Generative Landscape</h1>
+    <h1>Experiment 2 - Generative Landscape</h1>
 
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
-			</div>
+    <div class="minor-section">
+      <div id="canvas-container">
+        <!-- canvas will be added here by p5 -->
+      </div>
+      <div class="fullscreen-box">
+        <button id="fullscreen">Fullscreen</button>
+      </div>
+      <!-- Here's our new button -->
+      <div class="reimagine-box">
+        <button id="reimagineBtn">Reimagine</button>
+      </div>
+    </div>
 
-			<div class="minor-section">
-                <div class="image-wrapper">
-                    <img src="img/Mojave_National_Preserve_Kelso_Dunes_(49461666752).jpg">
-                </div>
-			</div>
+    <div class="minor-section">
+      <div class="image-wrapper">
+        <img src="img/Mojave_National_Preserve_Kelso_Dunes_(49461666752).jpg" alt="Inspiration Landscape">
+      </div>
+    </div>
 
-			<div class="minor-section">
-                <div>
-                    <h2>Description</h2>
-                    <p>We're trying to replicate the landscape on the left procedurally.  Or at least suggest relevant parts of it.</p>
-                    <p>We begin our creative journey with a simple concept: a horizontal line set across the canvas.</p>
-                    <p>In this experiment, I embarked on a journey to transform a simple digital canvas into a dynamic and textured landscape using p5.js, a JavaScript library for creative coding. The project began with the rendering of a basic horizontal line across the canvas, serving as a foundational element for further visual experimentation. To infuse realism and variability into this static line, I integrated Perlin noise, which allowed me to modulate the line with a naturalistic texture. This noise-enhanced line was then scaled to depict the undulating silhouette of a distant horizon, reminiscent of Monument Valley's iconic skyline.</p>
-                </div>
-			</div>
+    <div class="minor-section">
+      <div>
+        <h2>Description</h2>
+        <p>We're trying to replicate the landscape on the left procedurally. Or at least suggest relevant parts of it.</p>
+        <p>We begin our creative journey with a simple concept: a horizontal line set across the canvas.</p>
+        <p>In this experiment, I embarked on a journey to transform a simple digital canvas into a dynamic and textured landscape using p5.js, a JavaScript library for creative coding. The project began with the rendering of a basic horizontal line across the canvas, serving as a foundational element for further visual experimentation...</p>
+      </div>
+    </div>
 
-			<div class="minor-section">
-				<h2>Technical</h2>
+    <div class="minor-section">
+      <h2>Technical</h2>
+      <p>Further elaborating on this textured horizon, I introduced a cutoff threshold. This algorithmic intervention transformed portions of the textured line...</p>
+      <!-- etc. -->
+    </div>
 
-                <p>Further elaborating on this textured horizon, I introduced a cutoff threshold. This algorithmic intervention transformed portions of the textured line that exceeded this threshold into mesas, defining the nascent stages of a layered landscape. Subsequently, the tops of these mesas were given additional texture to enhance their three-dimensional appearance. The heights of the mesas were randomized using noise functions to avoid uniformity and simulate natural variability.</p>
+    <div class="minor-section">
+      <h2>Reflection</h2>
+      <p>Working on this example experiment for students started as a brief quickie example and turned into a 6-hour code binge...</p>
+    </div>
+  </section>
 
-                <p>To augment the landscape's complexity, I devised a method to define intricate shapes that could be programmatically filled, thus creating a more detailed and engaging visual representation. A textured horizon was added, along with a dynamically generated sky. This sky was populated with animated clouds, the colors of which were derived from a reference photograph, ensuring that the palette resonated with natural hues observed in real-world scenarios.</p>
+  <nav id="links" class="minor-section">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+    </ul>
+  </nav>
+</main>
 
-                <p>Importantly, the use of Perlin noise, rather than random functions, was instrumental throughout this development process. Unlike random functions that generate abrupt, discrete values, Perlin noise produces continuous, smooth variations. This characteristic is critical for simulating the subtle and fluid changes typical of natural environments, thereby enhancing the realism and visual continuity of the animated landscape. This procedural approach not only enriched the visual aesthetics but also demonstrated the potential of noise functions in generating complex, lifelike digital art.</p>
-			</div>
+<script>
+  // Once the document is ready, bind the click for "Reimagine"
+  $(document).ready(function() {
+    $('#reimagineBtn').click(function() {
+      // Re-randomize the seed
+      randomSeedVal = floor(random(999999));
+      noiseSeed(randomSeedVal);
+      randomSeed(randomSeedVal);
+      // Re-initialize the scene
+      initScene();
+    });
+  });
+</script>
 
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>Working on this example experiment for students started as a brief quickie example and turned into a 6-hour code binge. My eyes hurt.</p>
-                <p>If I had time and energy, I would still add texture to the ground and all sorts of things.</p>
-			</div>
-
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-		</nav>
-	</main>
 </body>
 </html>
