@@ -24,14 +24,14 @@ const CLOUD_MAX_SPEED    = 0.7;
 
 // Background Mountains
 const MOUNTAIN_COLOR     = "#7C8C94";
-const MOUNTAIN_NOISE_FREQ= 0.008;
+const MOUNTAIN_NOISE_FREQ= 0.005;
 const MOUNTAIN_MIN_Y     = 0.30;
 const MOUNTAIN_MAX_Y     = 0.60;
 const MOUNTAIN_EXTRA_MARGIN = 0.1;
 
 // Foreground Mountains (different pattern)
 const FOREGROUND_MOUNTAIN_COLOR = "#4B5763";
-const FOREGROUND_MOUNTAIN_NOISE_FREQ = 0.010;
+const FOREGROUND_MOUNTAIN_NOISE_FREQ = 0.006;
 const FOREGROUND_MOUNTAIN_MIN_Y  = 0.32;
 const FOREGROUND_MOUNTAIN_MAX_Y  = 0.62;
 const FOREGROUND_MOUNTAIN_EXTRA_MARGIN = 0.1;
@@ -47,7 +47,7 @@ const FOREGROUND_MOUNTAIN_EXTRA_MARGIN = 0.1;
 const DUNE_DATA = [
   {
     // Rearmost dune (background)
-    baselineFactor: 0.75,
+    baselineFactor: 0.80,
     topColor:    "#FDE3C4",
     bottomColor: "#E6B882",
     strokeColor: "#A97946",
@@ -55,7 +55,7 @@ const DUNE_DATA = [
   },
   {
     // Middle dune
-    baselineFactor: 0.82,
+    baselineFactor: 0.84,
     topColor:    "#F8D6AB",
     bottomColor: "#E0AD72",
     strokeColor: "#B3844E",
@@ -73,9 +73,9 @@ const DUNE_DATA = [
 
 // Dune geometry
 const STEP            = 5;
-const DUNE_NOISE_FREQ = 0.003;
-const DUNE_SLOPE_SCALE= -0.2;    // negative => "∪" shape
-const DUNE_AMPLITUDE  = 0.1;
+const DUNE_NOISE_FREQ = 0.004;
+const DUNE_SLOPE_SCALE= -0.3;    // negative => "∪" shape
+const DUNE_AMPLITUDE  = 0.04;
 const DUNE_EXTRA_MARGIN = 0.1;   // extend dune domain horizontally beyond edges
 const DUNE_BOTTOM_EXTENSION = 0.15;  // extend downward 15% of canvas height
 const DUNE_GRADIENT_EXTENSION = 0.1;   // extend gradient 10% of canvas height downward
