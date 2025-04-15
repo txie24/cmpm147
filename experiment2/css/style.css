@@ -9,6 +9,7 @@ canvas {
 /* Center the canvas element on the page */
 body {
     display: flex;
+    background-color: #ffe9d2;
     justify-content: center;
     align-items: center;
 }
