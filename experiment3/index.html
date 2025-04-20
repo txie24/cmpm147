@@ -1,70 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+  <title>Experiment X – Alternate Worlds</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- site CSS -->
+  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- layout tweaks -->
+  <style>
+    /* make the controls area the positioning context */
+    #controls {
+      position: relative;
+      padding: 20px;
+      padding-bottom: 60px; /* room for fullscreen button */
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    /* side-by-side layout for map + text */
+    #canvas-and-text {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    /* ensure the canvases/text have their own margin */
+    #canvasContainer {
+      margin: 10px;
+      display: block;
+    }
+    /* fullscreen button pinned bottom right */
+    #fullscreen {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10;
+    }
+  </style>
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <!-- jQuery & p5.js -->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
-    <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+  <!-- your existing scripts -->
+  <script src="../js/site.js" defer></script>
+  <script src="./js/project.js" defer></script>
+  <script src="./js/sketch.js" defer></script>
+
+  <!-- alternate‑worlds scripts -->
+  <script src="/p2_base.js" defer></script>
+  <script src="/p2_solution.js" defer></script>
 </head>
 <body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
+  <main id="content">
+    <section>
+      <h1>Experiment X – Subject/Topic / Alternate Worlds</h1>
 
-			<h1>Experiment X - Subject/Topic</h1>
+      <!-- CONTROLS BLOCK -->
+      <div id="controls" class="minor-section">
+        <button id="reseedButton">reseed</button>
+        <span id="seedReport">seed 1</span>
+        <hr />
 
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
-			</div>
+        <div id="canvas-and-text">
+          <!-- your p5 sketch injects its canvas here -->
+          <span id="canvasContainer"></span>
 
-			<div class="minor-section">
-				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
-			</div>
+          <!-- exactly square 320×320 for 20×20 chars -->
+          <textarea
+            cols="40"
+            rows="40"
+            id="asciiBox"
+            style="
+              opacity: 0.5;
+              letter-spacing: 1ex;
+              font-family: monospace;
+              width: 640px;
+              height: 640px;
+              margin: 10px;
+			  resize: both;
+			  overflow: auto;
+            "
+          ></textarea>
+        </div>
 
-			<div class="minor-section">
-				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
-			</div>
+        <button id="fullscreen">Fullscreen</button>
+      </div>
 
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
-			</div>
+      <div class="minor-section">
+        <h2>Description</h2>
+        <p>What are you trying to accomplish with this experiment?</p>
+      </div>
 
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-		</nav>
-	</main>
+      <div class="minor-section">
+        <h2>Technical</h2>
+        <p>Describe in detail what you did technically and how it works?</p>
+      </div>
+
+      <div class="minor-section">
+        <h2>Reflection</h2>
+        <p>
+          Each person that worked on the code should reflect on the process,
+          the difficulties, and the successes of the experiment.
+        </p>
+      </div>
+    </section>
+
+    <nav id="links" class="minor-section">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </main>
 </body>
 </html>
