@@ -1,113 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Experiment X – Alternate Worlds</title>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- site CSS -->
+  <title>Experiment 3 - Alternate Worlds</title>
   <link rel="stylesheet" href="../css/site.css" />
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- layout tweaks -->
-  <style>
-    /* make the controls area the positioning context */
-    #controls {
-      position: relative;
-      padding: 20px;
-      padding-bottom: 60px; /* room for fullscreen button */
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-    /* side-by-side layout for map + text */
-    #canvas-and-text {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    /* ensure the canvases/text have their own margin */
-    #canvasContainer {
-      margin: 10px;
-      display: block;
-    }
-    /* fullscreen button pinned bottom right */
-    #fullscreen {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      z-index: 10;
-    }
-  </style>
-
-  <!-- jQuery & p5.js -->
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
-
-  <!-- your existing scripts -->
-  <script src="../js/site.js" defer></script>
-  <script src="./js/project.js" defer></script>
-  <script src="./js/sketch.js" defer></script>
-
-  <!-- alternate‑worlds scripts -->
-  <script src="/p2_base.js" defer></script>
-  <script src="/p2_solution.js" defer></script>
 </head>
 <body>
   <main id="content">
     <section>
-      <h1>Experiment 3 – Overworld & Dungeon Generator</h1>
+      <h1>Experiment 3 - Overworld & Dungeon Generator</h1>
 
-<!-- CONTAINER FOR BOTH MAPS STACKED -->
-<div id="map-sections" style="display: flex; flex-direction: column; gap: 50px;">
-  <!-- OVERWORLD SECTION -->
-  <div style="display: flex; flex-direction: row; gap: 20px;">
-    <div>
-      <button id="reseed-overworld">Reseed Overworld</button>
-      <span id="seedReport-overworld">seed 0</span>
-      <div id="canvasContainer-overworld" style="margin-top: 10px;"></div>
-    </div>
-    <textarea id="asciiBox-overworld" rows="40" cols="40"
-      style="width: 640px; height: 640px; font-family: monospace; opacity: 0.5;"></textarea>
-  </div>
+      <div class="generator-window" id="gen-window">
+        <div class="generator">
+          <h2>Overworld</h2>
+          <button id="reseed-overworld">Regenerate Overworld</button>
+          <span id="seedReport-overworld"></span>
+          <div class="gen-row">
+            <div id="canvasContainer-overworld"></div>
+            <textarea id="asciiBox-overworld" cols="40" rows="40"></textarea>
+          </div>
+        </div>
 
-  <!-- DUNGEON SECTION -->
-  <div style="display: flex; flex-direction: row; gap: 20px;">
-    <div>
-      <button id="reseed-dungeon">Reseed Dungeon</button>
-      <span id="seedReport-dungeon">seed 0</span>
-      <div id="canvasContainer-dungeon" style="margin-top: 10px;"></div>
-    </div>
-    <textarea id="asciiBox-dungeon" rows="40" cols="40"
-      style="width: 640px; height: 640px; font-family: monospace; opacity: 0.5;"></textarea>
-  </div>
-</div>
+        <hr/>
 
-      
+        <div class="generator">
+          <h2>Dungeon</h2>
+          <button id="reseed-dungeon">Regenerate Dungeon</button>
+          <span id="seedReport-dungeon"></span>
+          <div class="gen-row">
+            <div id="canvasContainer-dungeon"></div>
+            <textarea id="asciiBox-dungeon" cols="40" rows="40"></textarea>
+          </div>
+        </div>
 
-        <button id="fullscreen">Fullscreen</button>
+        <!-- only floating fullscreen button -->
+        <div class="fullscreen-box">
+          <button id="toggle-fullscreen">Fullscreen</button>
+        </div>
       </div>
 
       <div class="minor-section">
         <h2>Description</h2>
-        <p>What are you trying to accomplish with this experiment?</p>
+        <p>
+          The project aims to generate two different maps—one overworld and one dungeon. Both use autotiling so that each tile flows seamlessly into the next.
+        </p>
       </div>
 
       <div class="minor-section">
         <h2>Technical</h2>
-        <p>Describe in detail what you did technically and how it works?</p>
+        <p>
+          Two p5.js instance‑mode sketches share one seed so every call to <code>p.random()</code> and <code>p.noise()</code> is reproducible: the overworld samples Perlin noise on a scaled grid, thresholds it into water/dirt/grass, then uses a 4‑bit neighbor bitmask + lookup table to autotile seamless edges and even drifts semi‑transparent ellipse clouds. The dungeon one picks non‑overlapping room rectangles, digs L‑shaped corridors, sprinkles ponds and chests, then in <code>draw()</code> it noise‑shimmers water, random‑flickers floor tiles, pulses a glow overlay, and wiggles chest sprites—all by blitting 8×8 tiles at 16×16 pixels (image smoothing off). Hit “reseed” or edit the ASCII textarea and it instantly re‑parses and redraws the whole map.
+        </p>
       </div>
 
       <div class="minor-section">
         <h2>Reflection</h2>
         <p>
-          Each person that worked on the code should reflect on the process,
-          the difficulties, and the successes of the experiment.
+          I ran into a bunch of hiccups—finding the right tile coords was a pain, and nailing the autotiling logic took way longer than I’d thought. But in the end it all clicks, and I’m really happy with how it looks and feels.
         </p>
       </div>
     </section>
@@ -118,5 +69,31 @@
       </ul>
     </nav>
   </main>
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <script src="../js/site.js" defer></script>
+  <script src="./js/sketch.js" defer></script>
+
+  <!-- fullscreen toggle logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('toggle-fullscreen');
+      const win = document.getElementById('gen-window');
+
+      btn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          win.requestFullscreen().catch(err => {
+            console.error(`Fullscreen failed: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

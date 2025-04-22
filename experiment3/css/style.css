@@ -1,45 +1,113 @@
-body {
-  font-family: sans-serif;
-  background: #1c1c1c;
-  color: #eaeaea;
-  padding: 20px;
-}
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.map-section {
-  margin-bottom: 60px;
-}
-.canvas-box {
-  margin: 10px 0;
+/* style.css */
+
+#links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.map-text-row {
-  display: flex;            /* side-by‑side */
-  gap: 30px;                /* space between map and text */
-  align-items: flex-start;  /* line up the tops */
-}
-#canvasContainer-overworld,
-#canvasContainer-dungeon,
-textarea {
-  width: 640px;
-  height: 640px;
-}
+canvas {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    display: block;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background: #1c1c1c;
+    color: #eaeaea;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    margin-bottom: 5px;
+  }
+  
+  .generator-window {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    margin-bottom: 24px;
+  }
+  
+  .fullscreen-box {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+  }
+  
+  .gen-row,
+  .map-text-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+  
+  .map-section {
+    margin-bottom: 60px;
+  }
+  
+  .canvas-box {
+    margin: 10px 0;
+  }
+  
+  #canvasContainer-overworld,
+  #canvasContainer-dungeon,
+  #canvas-container {
+    flex: 0 0 auto;
+    width: 640px;
+    height: 640px;
+  }
+  
+  .gen-row textarea,
+  .map-text-row textarea,
+  textarea {
+    flex: 0 0 auto;
+    width: 640px;
+    height: 640px;
+    box-sizing: border-box;
+    font-family: monospace;
+    letter-spacing: 1ex;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    resize: both;
+    overflow: auto;
+  }
+  
+  button {
+    margin: 10px 0;
+    padding: 8px 16px;
+    font-weight: bold;
+  }
+  
+  .minor-section {
+    margin-top: 30px;
+  }
+  
 
-textarea {
-  width: 640px;
-  height: 640px;
-  font-family: monospace;
-  letter-spacing: 1ex;
-  background: #000;
-  color: rgb(255, 255, 255);
-  opacity: 0.8;
-  resize: both;
-  overflow: auto;
-}
-button {
-  margin: 10px 0;
-  padding: 8px 16px;
-  font-weight: bold;
-}
+  #links a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #bebebe;   
+    color: #1c1c1c;             
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  #links a:hover {
+    background-color: #ffffff;     
+  }
+  
