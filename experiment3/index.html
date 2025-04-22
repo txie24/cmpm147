@@ -61,35 +61,34 @@
 <body>
   <main id="content">
     <section>
-      <h1>Experiment X – Subject/Topic / Alternate Worlds</h1>
+      <h1>Experiment 3 – Overworld & Dungeon Generator</h1>
 
-      <!-- CONTROLS BLOCK -->
-      <div id="controls" class="minor-section">
-        <button id="reseedButton">reseed</button>
-        <span id="seedReport">seed 1</span>
-        <hr />
+<!-- CONTAINER FOR BOTH MAPS STACKED -->
+<div id="map-sections" style="display: flex; flex-direction: column; gap: 50px;">
+  <!-- OVERWORLD SECTION -->
+  <div style="display: flex; flex-direction: row; gap: 20px;">
+    <div>
+      <button id="reseed-overworld">Reseed Overworld</button>
+      <span id="seedReport-overworld">seed 0</span>
+      <div id="canvasContainer-overworld" style="margin-top: 10px;"></div>
+    </div>
+    <textarea id="asciiBox-overworld" rows="40" cols="40"
+      style="width: 640px; height: 640px; font-family: monospace; opacity: 0.5;"></textarea>
+  </div>
 
-        <div id="canvas-and-text">
-          <!-- your p5 sketch injects its canvas here -->
-          <span id="canvasContainer"></span>
+  <!-- DUNGEON SECTION -->
+  <div style="display: flex; flex-direction: row; gap: 20px;">
+    <div>
+      <button id="reseed-dungeon">Reseed Dungeon</button>
+      <span id="seedReport-dungeon">seed 0</span>
+      <div id="canvasContainer-dungeon" style="margin-top: 10px;"></div>
+    </div>
+    <textarea id="asciiBox-dungeon" rows="40" cols="40"
+      style="width: 640px; height: 640px; font-family: monospace; opacity: 0.5;"></textarea>
+  </div>
+</div>
 
-          <!-- exactly square 320×320 for 20×20 chars -->
-          <textarea
-            cols="40"
-            rows="40"
-            id="asciiBox"
-            style="
-              opacity: 0.5;
-              letter-spacing: 1ex;
-              font-family: monospace;
-              width: 640px;
-              height: 640px;
-              margin: 10px;
-			  resize: both;
-			  overflow: auto;
-            "
-          ></textarea>
-        </div>
+      
 
         <button id="fullscreen">Fullscreen</button>
       </div>
