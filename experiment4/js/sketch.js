@@ -1110,8 +1110,77 @@ const s3 = (sketch) => {
   }
 };
 
-new p5(s1, "canvas-container1");
-new p5(s2, "canvas-container2");
-new p5(s3, "canvas-container3");
 
+
+// === Instance Controls ===
+"use strict";
+
+let p5_world1 = new p5(s1, "canvas-container1");
+let p5_world2 = null;
+let p5_world3 = null;
+
+function startWorld1() {
+  if (!p5_world1) {
+    p5_world1 = new p5(s1, "canvas-container1");
+    document.getElementById('start-world1').disabled = true;
+    document.getElementById('stop-world1').disabled = false;
+  }
+}
+
+function stopWorld1() {
+  if (p5_world1) {
+    p5_world1.remove();
+    p5_world1 = null;
+    document.getElementById('start-world1').disabled = false;
+    document.getElementById('stop-world1').disabled = true;
+  }
+}
+
+function startWorld2() {
+  if (!p5_world2) {
+    p5_world2 = new p5(s2, "canvas-container2");
+    document.getElementById('start-world2').disabled = true;
+    document.getElementById('stop-world2').disabled = false;
+  }
+}
+
+function stopWorld2() {
+  if (p5_world2) {
+    p5_world2.remove();
+    p5_world2 = null;
+    document.getElementById('start-world2').disabled = false;
+    document.getElementById('stop-world2').disabled = true;
+  }
+}
+
+function startWorld3() {
+  if (!p5_world3) {
+    p5_world3 = new p5(s3, "canvas-container3");
+    document.getElementById('start-world3').disabled = true;
+    document.getElementById('stop-world3').disabled = false;
+  }
+}
+
+function stopWorld3() {
+  if (p5_world3) {
+    p5_world3.remove();
+    p5_world3 = null;
+    document.getElementById('start-world3').disabled = false;
+    document.getElementById('stop-world3').disabled = true;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('start-world1').disabled = true;
+  document.getElementById('stop-world1').disabled = false;
+  
+  document.getElementById('start-world1').addEventListener('click', startWorld1);
+  document.getElementById('stop-world1').addEventListener('click', stopWorld1);
+
+  document.getElementById('start-world2').addEventListener('click', startWorld2);
+  document.getElementById('stop-world2').addEventListener('click', stopWorld2);
+
+  document.getElementById('start-world3').addEventListener('click', startWorld3);
+  document.getElementById('stop-world3').addEventListener('click', stopWorld3);
+});
 
