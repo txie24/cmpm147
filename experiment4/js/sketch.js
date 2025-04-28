@@ -217,7 +217,10 @@ const s1 = (sketch) => {
     if (sketch.dist(world_x, world_y, carPos.x, carPos.y) < 0.5) {
       sketch.push();
       sketch.imageMode(sketch.CENTER);
-      sketch.image(carImg, 0, -40, 120, 60);
+      const carScale = 0.1;             
+      const imgW = carImg.width * carScale;
+      const imgH = carImg.height * carScale;
+      sketch.image(carImg, 0, -40, imgW, imgH);
       sketch.pop();
     }
 
