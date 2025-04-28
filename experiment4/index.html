@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Experiment 04: Infinite Worlds</title>
+  <title>Experiment 04: Infinite Worlds</title>
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/site.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- Libraries -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
-	<script src="https://unpkg.com/xxhashjs@0.2.2/build/xxhash.min.js" defer></script>
+  <!-- quick inline CSS to position our fullscreen button -->
+  <style>
+    .p5Canvas {
+      position: relative;
+    }
+    #canvas-container1 .fullscreen-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  </style>
 
-	<!-- World + Sketch scripts -->
+  <!-- Libraries -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <script src="https://unpkg.com/xxhashjs@0.2.2/build/xxhash.min.js" defer></script>
 
-	<script src="./js/sketch.js" defer></script>
+  <!-- World + Sketch scripts -->
+  <script src="./js/sketch.js" defer></script>
 </head>
 
 <body>
-	<main id="content">
-		<section>
+  <main id="content">
+    <section>
+      <h1>Experiment 04: Infinite Worlds</h1>
 
-			<h1>Experiment 04: Infinite Worlds</h1>
-
-			<div class="minor-section">
-				<div id="canvas-container1" class="p5Canvas">
+      <div class="minor-section">
+        <div id="canvas-container1" class="p5Canvas">
           <p>Mario Kart Rainbow Road</p>
           <button id="start-world1">Start Mario Kart Rainbow Road</button>
           <button id="stop-world1" disabled>Stop Mario Kart Rainbow Road</button>
         </div>
-        
 
-				<div id="canvas-container2" class="p5Canvas">
+        <div id="canvas-container2" class="p5Canvas">
           <hr/>
           <p>Hong Kong</p>
           <button id="start-world2">Start Hong Kong</button>
@@ -46,32 +57,35 @@
           <button id="start-world3">Start U~F~O</button>
           <button id="stop-world3" disabled>Stop U~F~O</button>
         </div>
-			</div>
+      </div>
 
-			<!-- Your full Artist Statement -->
-			<div class="minor-section">
-				<h2>Artist Statement: Creating Infinite Worlds</h2>
-				<p>... (your full Artist Statement here) ...</p>
-			</div>
+      <!-- Your full Artist Statement -->
+      <div class="minor-section">
+        <h2>Artist Statement: Creating Infinite Worlds</h2>
+        <p>... (your full Artist Statement here) ...</p>
+      </div>
 
-			<!-- Your full Technical Overview -->
-			<div class="minor-section">
-				<h2>Technical Overview</h2>
-				<p>... (your full Technical Overview here) ...</p>
-			</div>
+      <!-- Your full Technical Overview -->
+      <div class="minor-section">
+        <h2>Technical Overview</h2>
+        <p>... (your full Technical Overview here) ...</p>
+      </div>
 
-			<!-- Your full Reflection -->
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>... (your full Reflection here) ...</p>
-			</div>
-		</section>
-		<nav id="links" class="minor-section">
-			<ul>
-			  <li><a href="../index.html">Home</a></li>
+      <!-- Your full Reflection -->
+      <div class="minor-section">
+        <h2>Reflection</h2>
+        <p>... (your full Reflection here) ...</p>
+      </div>
+    </section>
 
-			</ul>
-		  </nav>
-	</main>
+    <!-- Home button -->
+    <nav id="links" class="minor-section">
+      <ul>
+        <button id="home-button" onclick="window.location.href='../index.html'">
+          Home
+        </button>
+      </ul>
+    </nav>
+  </main>
 </body>
 </html>
