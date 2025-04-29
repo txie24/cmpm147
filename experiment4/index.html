@@ -62,19 +62,21 @@
       <!-- Your full Artist Statement -->
       <div class="minor-section">
         <h2>Artist Statement: Creating Infinite Worlds</h2>
-        <p>... (your full Artist Statement here) ...</p>
+        <p>For each world I wanted to craete something unique.</p>
       </div>
 
       <!-- Your full Technical Overview -->
       <div class="minor-section">
         <h2>Technical Overview</h2>
-        <p>... (your full Technical Overview here) ...</p>
+        <p><b>Mario kart:</b> First, the sketch loads your Mario-Kart car image and switches into HSB color mode so handling hues is easier. When you give it a new world key, it hashes that key to seed both the random and noise functions, picks a random road width between 8 and 16 tiles, and clears any old road data. The world is made up of diamond-shaped tiles that are 12 wide by 6 tall. Each frame, it bumps a rainbow offset so the road’s colors keep cycling, moves the car forward by one unit, and figures out the car’s vertical position from a smooth, noise-driven curve. For every tile, it checks whether it’s on the road or in space, fills road tiles with a shifting rainbow hue, and fills space tiles with a noisy star-field look. If you click a tile, it briefly flashes a sparkle on it, and it randomly sprinkles little white stars in the space areas. Whenever the car lands on a tile, it draws the car sprite centered just above that tile. A helper function called roadOffsetAt builds the curvy road by sampling Perlin noise, clamping the curvature, accumulating a position offset, and caching each result so it stays smooth and fast. Finally, there are simple helpers to outline a selected tile in green and to return the car’s current {x, y} position.</p>
+        <p><b>Hong Kong:</b> This project creates an isometric 3D city map with animated cars and dynamic buildings using JavaScript and p5.js functions. The city layout alternates between road tiles and building tiles in repeating groups. Roads feature dashed white lane markings, while cars move along them in smooth directions based on noise-generated traffic density. Buildings are procedurally generated with varying heights, colors, windows, and rooftop features like antennas, water tanks, or HVAC units, all determined by seeded randomness. Click tracking and basic tile highlighting are also included for interaction.</p>
+        <p><b>U~F~O:</b> the sketch first loads your UFO sprite in the preload step and switches into HSB color mode during setup so you can play with hues. Whenever you hit a new world key, it hashes that key into a seed, reseeds both the noise and random generators, and snaps the ship’s tile coordinates back to (0,0). As you press WASD, the code updates those shipI and shipJ values, which in turn shifts the entire tile grid under the stationary UFO at the center. Each tile is painted by drawSpaceBackground using Perlin noise mixed with a slowly drifting nebulaColorShift, so the nebula colors subtly change over time and you get random static twinkle stars sprinkled in. After drawing the grid, the sketch occasionally spawns little ShootingStar objects that streak across the screen—some even cycle through rainbow hues—then disappear once they fly off-screen.</p>
       </div>
 
       <!-- Your full Reflection -->
       <div class="minor-section">
         <h2>Reflection</h2>
-        <p>... (your full Reflection here) ...</p>
+        <p>The project was alot harder than I though as there is lot of things to do. But at the end I finsihed all of the planned things I wanted for my world, and am very satisfied with the results</p>
       </div>
     </section>
 
